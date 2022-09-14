@@ -34,7 +34,7 @@ class test_basemodel(unittest.TestCase):
         def tearDown(self):
             try:
                 os.remove('file.json')
-            except:
+            except Exception:
                 pass
 
         def test_default(self):
@@ -170,7 +170,7 @@ class test_basemodel(unittest.TestCase):
             self.assertEqual(inst.number, 89)
 
         def test_datetime_attributes(self):
-            """Test that two BaseModel instances have different datetime objects
+            """Test that two BaseModel instances have different datetime
             and that upon creation have identical updated_at and created_at
             value."""
             tic = datetime.now()
